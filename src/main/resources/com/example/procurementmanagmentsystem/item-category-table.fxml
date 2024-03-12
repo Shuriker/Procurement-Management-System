@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="root" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.procurementmanagmentsystem.Controllers.ItemCategoryController">
+   <children>
+      <AnchorPane fx:id="root1" layoutY="25.0" prefHeight="425.0" prefWidth="800.0" style="-fx-background-color: #bbdefb;">
+         <children>
+            <VBox layoutX="21.0" layoutY="26.0" prefHeight="191.0" prefWidth="87.0" spacing="20.0">
+               <children>
+                  <Label text="plan_id" />
+                  <Label prefHeight="17.0" prefWidth="88.0" text="category_name" />
+               </children>
+            </VBox>
+            <VBox layoutX="114.0" layoutY="26.0" prefHeight="170.0" prefWidth="235.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="tfCategoryId" />
+                  <TextField fx:id="tfCategoryName" layoutX="10.0" layoutY="10.0" />
+               </children>
+            </VBox>
+            <TableView fx:id="tvCategory" layoutX="370.0" layoutY="14.0" onMouseClicked="#handleMouseAction" prefHeight="373.0" prefWidth="417.0">
+               <columns>
+                  <TableColumn fx:id="colCategoryId" prefWidth="198.0" text="plan_id" />
+                  <TableColumn fx:id="colCategoryName" prefWidth="218.0" text="category_name" />
+               </columns>
+            </TableView>
+            <HBox layoutX="94.0" layoutY="200.0" prefHeight="25.0" prefWidth="255.0" spacing="5.0">
+               <children>
+                  <Button fx:id="btnInsert" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="80.0" text="Insert">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@insert.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="80.0" text="Update">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@update.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="80.0" text="Delete">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@delete.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <MenuBar fx:id="myMenyBar" layoutY="2.0" prefHeight="25.0" prefWidth="800.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Control">
+               <items>
+                  <MenuItem fx:id="ProcurementPlanControl" mnemonicParsing="false" onAction="#switchToSceneProcurementPlanControl" text="Procurement Plan Control" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Demand">
+               <items>
+                  <MenuItem fx:id="DemandAnalyze" mnemonicParsing="false" onAction="#switchToSceneDemandAnalyze" text="Demand determination" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Accounting">
+               <items>
+                  <Menu mnemonicParsing="false" text="Items">
+                     <items>
+                        <MenuItem fx:id="menuItemItem" mnemonicParsing="false" onAction="#switchToSceneCRUDItem" text="Items" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToSceneItemCategoryTable" text="Item Category" />
+                        <MenuItem mnemonicParsing="false" text="Item detail info" />
+                        <MenuItem mnemonicParsing="false" text="sales between supply info" />
+                        <MenuItem mnemonicParsing="false" text="Item Transactions" />
+                        <MenuItem mnemonicParsing="false" text="Return Items" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Procurement Plan">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="iterm" />
+                        <MenuItem mnemonicParsing="false" text="Item Categ" />
+                        <MenuItem mnemonicParsing="false" text="iterm" />
+                        <MenuItem mnemonicParsing="false" text="iterm" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Purchase Orders">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="iterm" />
+                        <MenuItem mnemonicParsing="false" text="Item Categ" />
+                        <MenuItem mnemonicParsing="false" text="iterm" />
+                        <MenuItem mnemonicParsing="false" text="iterm" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Customer Orders">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="iterm" />
+                        <MenuItem mnemonicParsing="false" text="Item Categ" />
+                        <MenuItem mnemonicParsing="false" text="iterm" />
+                        <MenuItem mnemonicParsing="false" text="iterm" />
+                     </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" text="Clients" />
+                  <MenuItem mnemonicParsing="false" text="Suppliers" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

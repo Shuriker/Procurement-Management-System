@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.procurementmanagmentsystem.Controllers.MainMenuController">
+   <children>
+      <AnchorPane fx:id="root1" layoutY="25.0" prefHeight="425.0" prefWidth="800.0" style="-fx-background-color: #bbdefb;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="108.0" prefHeight="210.0" prefWidth="800.0" text="Welcome to Procurement Management System!">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <MenuBar fx:id="myMenyBar" layoutY="2.0" prefHeight="25.0" prefWidth="800.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Control">
+               <items>
+                  <MenuItem fx:id="ProcurementPlanControl" mnemonicParsing="false" onAction="#switchToSceneProcurementPlanControl" text="Procurement Plan Control" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Demand">
+               <items>
+                  <MenuItem fx:id="DemandAnalyze" mnemonicParsing="false" onAction="#switchToSceneDemandAnalyze" text="Demand determination" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Accounting">
+               <items>
+                  <Menu mnemonicParsing="false" text="Items">
+                     <items>
+                        <MenuItem fx:id="menuItemItem" mnemonicParsing="false" onAction="#switchToSceneCRUDItem" text="Items" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToSceneItemCategoryTable" text="Item Category" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToSceneItemProcurement" text="Item procurement calc info" />
+                        <MenuItem mnemonicParsing="false" text="sales between supply info" />
+                        <MenuItem mnemonicParsing="false" text="Item Transactions" />
+                        <MenuItem mnemonicParsing="false" text="Return Items" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Procurement Plan">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="procurement Plan" />
+                        <MenuItem mnemonicParsing="false" text="Plan Orders" />
+                        <MenuItem mnemonicParsing="false" text="Plan Orders detail" />
+                        <MenuItem mnemonicParsing="false" text="iterm" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Purchase Orders">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Purchase Order" />
+                        <MenuItem mnemonicParsing="false" text="Purchase Order Detail" />
+                        <MenuItem mnemonicParsing="false" text="Purchase request" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Customer Orders">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Customer order" />
+                        <MenuItem mnemonicParsing="false" text="Customer order detail " />
+                        <MenuItem mnemonicParsing="false" text="Customer order detail reserv" />
+                     </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" text="Clients" />
+                  <MenuItem mnemonicParsing="false" text="Suppliers" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
